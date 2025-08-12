@@ -1,0 +1,173 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.movie {
+  @include display-position(flex, center, center);
+  column-gap: 3rem;
+  position: relative;
+  z-index: 2;
+  flex-direction: column;
+  padding: 1.5rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    margin-top: 1rem;
+
+    .title {
+      display: flex;
+      align-items: center;
+      column-gap: 1rem;
+      flex-wrap: wrap;
+
+      h2 {
+        font-weight: 500;
+        font-size: 1.85rem;
+      }
+
+      span {
+        font-weight: 300;
+        font-size: 1.5rem;
+      }
+    }
+
+    .original_title {
+      h2 {
+        font-weight: 400;
+        font-size: 1.25rem;
+
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+
+    .genres {
+      display: flex;
+      column-gap: 1rem;
+
+      span {
+        border: 1px solid $white-900;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        font-weight: 200;
+      }
+    }
+
+    .original_language {
+      h2 {
+        font-weight: 300;
+        font-size: 1rem;
+
+        span {
+          font-weight: 300;
+        }
+      }
+    }
+
+    .score {
+      display: flex;
+      align-items: center;
+      column-gap: 1rem;
+
+      h3 {
+        font-weight: 100;
+        font-size: 1.25rem;
+      }
+
+      .circle {
+        position: relative;
+        width: 3rem;
+        height: 3rem;
+
+        &.green {
+          color: $green-400;
+        }
+
+        &.yellow {
+          color: $yellow-400;
+        }
+
+        &.orange {
+          color: $orange-400;
+        }
+
+        &.red {
+          color: $red-400;
+        }
+
+        svg {
+          width: 100%;
+          height: 100%;
+          transform: rotate(90deg);
+        }
+
+        div {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.75rem;
+          font-weight: 700;
+          color: $white-900;
+        }
+      }
+    }
+  }
+}
+
+@include respond(lg) {
+  .movie {
+    align-items: start;
+
+    img {
+      width: 70%;
+      height: 70%;
+    }
+
+    .info {
+      width: 70%;
+
+      .title {
+        h2 {
+          font-weight: 500;
+          font-size: 2.5rem;
+        }
+
+        span {
+          font-weight: 300;
+          font-size: 2rem;
+        }
+      }
+
+      .score {
+        h3 {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+@include respond(lg) {
+  .movie {
+    flex-direction: row;
+    top: 0;
+
+    img {
+      width: 400px;
+      height: 600px;
+    }
+
+    .info {
+      margin-top: 0;
+    }
+  }
+}
