@@ -1,0 +1,74 @@
+@use "sass:color";
+@use "@/styles/variables" as *;
+
+.skeleton_card {
+  width: 100%;
+  position: relative;
+  border: 1px solid $black-500;
+  border-radius: 0.125rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  animation: pulse 2s infinite;
+  background-color: $black-500;
+}
+
+.skeleton_image {
+  height: 28rem;
+  margin-bottom: 1rem;
+  background-color: $gray-350;
+  border-radius: 0.125rem;
+  background-color: color.adjust($color: $black-500, $lightness: 4%);
+}
+
+.skeleton_rating {
+  position: absolute;
+  bottom: 110px;
+  left: 1rem;
+  width: 3rem;
+  height: 3rem;
+
+  .svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .path_bg {
+    stroke: $white-900;
+  }
+
+  .path_fg {
+    stroke: $white-900;
+    stroke-dasharray: 100, 100;
+    stroke-linecap: round;
+  }
+}
+
+.skeleton_text {
+  padding: 1.5rem;
+
+  div {
+    background-color: $gray-350;
+    border-radius: 9999px;
+    margin-bottom: 0.625rem;
+    height: 0.5rem;
+
+    &.line_full {
+      width: 100%;
+      margin-bottom: 1rem;
+      height: 0.625rem;
+    }
+
+    &.line_short {
+      width: 80%;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
