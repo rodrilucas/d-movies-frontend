@@ -1,0 +1,40 @@
+@use "sass:color";
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.header {
+  background: linear-gradient(to top, color.adjust($color: $black-700, $alpha: -0.3), $black-700),
+    url(/images/header.png);
+  background-size: cover;
+  background-position: center;
+  padding: 1rem 2rem;
+  height: 100%;
+
+  div {
+    @include display-position(flex, center, center);
+    height: 100%;
+
+    h2 {
+      width: 700px;
+      font-size: 4rem;
+      font-weight: 800;
+
+      span {
+        display: block;
+        font-weight: 100;
+      }
+
+      & span:nth-of-type(1) {
+        color: $yellow-500;
+      }
+
+      & span:nth-of-type(3) {
+        color: $red-500;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
