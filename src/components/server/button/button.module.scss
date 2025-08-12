@@ -1,0 +1,39 @@
+@use "sass:color";
+@use "@/styles/variables" as *;
+@use "@/styles/base" as *;
+@use "@/styles/mixins" as *;
+
+.button {
+  @extend %super-button;
+  @include display-position(inline-flex, center, center);
+  color: $white-900;
+  background-color: $blue-700;
+  border-color: $blue-700;
+  width: max-content;
+  gap: 0.25rem;
+  
+  &:hover {
+    background-color: color.adjust($color: $blue-700, $lightness: 7%);
+    transition: background 0.5s ease;
+  }
+  
+  &.loading::after {
+    @include icon("", 22px, 22px, "/icons/spinner.svg");
+    animation: spin 2s linear infinite;
+  }
+}
+
+@include respond(md) {
+  .button {
+    width: auto;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
