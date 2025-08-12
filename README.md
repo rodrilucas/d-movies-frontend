@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 🎬 D’movies - Frontend
 
-## Getting Started
+Interface moderna e 100% responsiva para busca, listagem e visualização de informações detalhadas sobre filmes.  
+Desenvolvida com **Next.js 15**, **SASS** e arquitetura modular, conectada ao backend próprio para garantir desempenho e evitar requisições desnecessárias à API externa.
 
-First, run the development server:
+---
 
+### 🚀 Tecnologias Utilizadas
+- **Next.js 15** – Server & Client Components
+- **SASS** – arquitetura modular e responsiva
+- **TypeScript** – tipagem estática e segura
+- **Fetch API nativa** – consumo otimizado do backend
+- **Arquitetura Mobile First** – adaptada para qualquer tela
+
+---
+
+### 📸 Prévia
+
+**Tela principal**  
+![Tela principal](./docs/screenshots/home.png)
+
+**Tela principal de filmes**  
+![Tela principal dos filmes](./docs/screenshots/movies.png)
+
+**Tela principal dos filmes com busca ativada**  
+![Tela principal dos filmes com busca](./docs/screenshots/search.png)
+
+**Filtro avançado funcionando**  
+![Filtro avançado funcionando](./docs/screenshots/filter.png)
+
+**Tela de detalhes do filme**  
+![Tela de detalhes do filme](./docs/screenshots/movie.png)
+
+---
+
+### 📂 Estrutura de Pastas
+
+src/  
+├── app/ # Rotas e páginas do Next.js  
+├── components/ # Componentes reutilizáveis (UI e lógicos)  
+├── context/ # Context API para estados globais  
+├── hooks/ # Hooks customizados  
+├── styles/ # Estilos SASS organizados por módulo  
+├── types/ # Tipagens TypeScript globais  
+└── utils/ # Funções utilitárias e helpers  
+
+---
+
+### ⚙️ Funcionalidades
+- 🔍 **Busca inteligente** de filmes por nome
+- 🎯 **Filtros avançados** (gênero, idioma, ano, avaliação e votos)
+- 📄 **Paginação dinâmica** com atualização sem recarregar a página
+- 🖼️ **Detalhes completos** de cada filme com título, sinopse, gêneros e notas
+- 📱 **Design adaptável** do mobile ao desktop
+- 🔄 **Comunicação otimizada** com o backend para reduzir chamadas desnecessárias
+
+---
+
+### 📦 Instalação
 ```bash
+# Clonar repositório
+git clone https://github.com/rodrilucas/d-movies-frontend.git
+
+# Entrar na pasta do projeto
+cd d-movies-frontend
+
+# Instalar dependências
+npm install
+
+# Executar em modo desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔗 Backend
+Este frontend consome a API do **D’movies Backend**.  
+➡️ **Repositório:** [D-movies Backend](https://github.com/rodrilucas/d-movies-backend)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📄 Licença
+MIT License © Lucas
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
