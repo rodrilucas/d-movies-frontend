@@ -69,13 +69,15 @@ npm install
 
 # Executar em modo desenvolvimento
 npm run dev
-
+```
 
 ## 🔗 Backend
 Este frontend consome a API do **D’movies Backend**.  
 ➡️ **Repositório:** [D-movies Backend](https://github.com/rodrilucas/d-movies-backend)
 
 ---
+
+**Créditos:** Este projeto utiliza dados e imagens fornecidos pelo [The Movie Database (TMDB)](https://www.themoviedb.org/).  
 
 ## 📄 Licença
 MIT License © Lucas
