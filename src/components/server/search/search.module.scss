@@ -1,0 +1,62 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/variables" as *;
+@use "@/styles/base" as *;
+
+.search {
+  @include display-position(flex, center, center);
+
+  fieldset {
+    width: 100%;
+    border: none;
+
+    legend {
+      @include visually-hidden;
+    }
+
+    label {
+      position: relative;
+
+      input {
+        @extend %super-input;
+        background-color: $white-900;
+        border-color: $white-900;
+        width: 100%;
+        color: $black-500;
+        
+        &:focus {
+          outline: none;
+        }
+      }
+
+      span {
+        position: absolute;
+        left: 16px;
+        top: -4px;
+        
+        &::before {
+          @include display-position(inline-flex, center, center);
+          @include icon("", 16px, 16px, "/icons/search.svg");
+        }
+      }
+    }
+  }
+}
+
+@include respond(md) {
+  .search {
+    @include display-position(flex, center, center);
+    flex-direction: row;
+    gap: 0.5rem;
+
+    fieldset {
+      width: auto;
+
+      label {
+        
+        input {
+          width: auto;
+        }
+      }
+    }
+  }
+}
