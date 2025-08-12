@@ -1,0 +1,32 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: $black-500;
+  position: relative;
+
+  span {
+    font-weight: 600;
+    position: absolute;
+    @include centralize;
+  }
+
+  .info {
+    position: absolute;
+    width: max-content;
+    transform: translate(-50%, -100%);
+    pointer-events: none;
+    z-index: 100;
+    background-color: $black-700;
+    padding: 0.225rem;
+
+    p {
+      font-size: 0.5rem;
+      font-weight: 400;
+    }
+  }
+}
