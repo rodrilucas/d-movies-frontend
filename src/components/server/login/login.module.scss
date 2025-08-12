@@ -1,0 +1,47 @@
+@use "@/styles/components" as *;
+@use "@/styles/mixins" as *;
+@use "@/styles/variables" as *;
+
+.message {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: $red-500;
+  margin-bottom: 1rem;
+}
+
+.email,
+.password {
+  @include fieldset-input;
+
+  span {
+    @include error;
+  }
+}
+
+.email {
+  label {
+    span {
+      &::before {
+        @include icon("", 16px, 16px, "/icons/email.svg");
+      }
+    }
+  }
+}
+
+.password {
+  label {
+    span {
+      &::before {
+        @include icon("", 16px, 16px, "/icons/password.svg");
+      }
+    }
+  }
+}
+
+.btn_login {
+  @include btn-form;
+}
+
+.redirect {
+  @include redirect;
+}
