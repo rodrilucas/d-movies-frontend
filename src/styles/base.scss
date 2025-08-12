@@ -1,0 +1,28 @@
+@use "@/styles/variables" as *;
+
+%super-input {
+  font-size: 0.85rem;
+  color: $white-900;
+  padding: 0.5rem 2.5rem;
+  border-radius: 0.25rem;
+  border-width: 2px;
+  border-style: solid;
+
+  &::placeholder {
+    font-weight: 100;
+    padding-left: 0.25rem;
+  }
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+%super-button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  border-style: solid;
+  cursor: pointer;
+}
