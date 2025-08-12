@@ -1,7 +1,6 @@
-import styles from "./page.module.scss";
+import "./page.module.scss";
+import Header from "@/components/server/header";
 
 export default function Home() {
-  return <div className={styles.page}>
-    Hello World
-  </div>;
+  return <Header />;
 }
