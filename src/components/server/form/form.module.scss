@@ -1,0 +1,17 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: $black-500;
+  gap: 1rem;
+  padding: 3.5rem;
+  border-radius: 0.5rem;
+}
+
+@include respond(md) {
+  .form {
+    width: auto;
+  }
+}
