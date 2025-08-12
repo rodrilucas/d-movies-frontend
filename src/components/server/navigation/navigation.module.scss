@@ -1,0 +1,44 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/variables" as *;
+
+.navigation {
+  @include display-position(flex, flex-start, space-between);
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid $black-500;
+  row-gap: 1rem;
+
+  .principal {
+    font-weight: 600;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 100%;
+  }
+
+  .logged_in {
+    @include display-position(flex, center, center);
+    column-gap: 1rem;
+  }
+}
+
+@include respond(md) {
+  .navigation {
+    @include display-position(flex, center, space-between);
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+    border: 1px solid $black-500;
+
+    .links {
+      @include display-position(flex, center, center);
+      flex-direction: row;
+      gap: 2rem;
+      width: auto;
+    }
+  }
+}
