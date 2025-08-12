@@ -1,10 +1,14 @@
+import "@/styles/reset.scss";
+import "@/styles/globals.scss";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "@/styles/globals.scss"
+import { Noto_Sans } from "next/font/google";
+import Navigation from "@/components/server/navigation";
+import { Provider } from "@/context/Provider";
 
-const inter = Inter({
-  variable: "--font-inter",
+const notoSans = Noto_Sans({
   subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -19,8 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.variable}`}>
-        <main>{children}</main>
+      <body className={notoSans.className}>
+        <Provider>
+          <Navigation />
+          <main>{children}</main>
+        </Provider>
       </body>
     </html>
   );
