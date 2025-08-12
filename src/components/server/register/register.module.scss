@@ -1,0 +1,67 @@
+@use "@/styles/components" as *;
+@use "@/styles/mixins" as *;
+
+.person {
+  .name {
+    margin-bottom: 1rem;
+  }
+}
+
+.name,
+.surname,
+.email,
+.password {
+  @include fieldset-input;
+
+  span {
+    @include error;
+  }
+}
+
+.name {
+  label {
+    span {
+      &::before {
+        @include icon("", 16px, 16px, "/icons/person.svg");
+      }
+    }
+  }
+}
+
+.surname {
+  label {
+    span {
+      &::before {
+        @include icon("", 16px, 16px, "/icons/person.svg");
+      }
+    }
+  }
+}
+
+.email {
+  label {
+    span {
+      &::before {
+        @include icon("", 16px, 16px, "/icons/email.svg");
+      }
+    }
+  }
+}
+
+.password {
+  label {
+    span {
+      &::before {
+        @include icon("", 16px, 16px, "/icons/password.svg");
+      }
+    }
+  }
+}
+
+.btn_register {
+  @include btn-form;
+}
+
+.redirect {
+  @include redirect;
+}
