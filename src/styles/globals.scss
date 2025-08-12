@@ -1,0 +1,22 @@
+@use "@/styles/variables" as *;
+
+html,
+body {
+  background-color: $black-700;
+  color: $white-900;
+}
+
+html,
+body,
+main {
+  height: 100% - 2.874%;
+}
+
+body {
+  font-size: 1rem;
+  font-optical-sizing: auto;
+}
+
+a {
+  color: $white-900;
+}
