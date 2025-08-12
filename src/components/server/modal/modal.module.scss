@@ -1,0 +1,13 @@
+@use "sass:color";
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.modal {
+  @include display-position(flex, center, center);
+  @include centralize;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: color.adjust($color: $black-700, $alpha: -0.4);
+}
+
