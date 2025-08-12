@@ -1,0 +1,23 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  place-content: space-between;
+  gap: 1.5rem;
+}
+
+@include respond(sm) {
+  .movies {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include respond(lg) {
+  .movies {
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  }
+}
+
+
