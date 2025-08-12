@@ -1,0 +1,129 @@
+@use "sass:color";
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+@use "@/styles/components" as *;
+
+.form {
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 1rem;
+
+  .gender {
+    legend {
+      @include label-filter;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+
+      li {
+        label {
+          input {
+            display: none;
+
+            &:checked + span {
+              background-color: $black-500;
+              border-color: $black-500;
+            }
+          }
+
+          span {
+            @extend %super-button;
+            color: $white-900;
+            background-color: $blue-700;
+            border-color: $blue-700;
+
+            &:hover {
+              background-color: color.adjust($color: $blue-700, $lightness: 7%);
+              transition: background 0.5s ease;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sort {
+    label {
+      @include label-filter;
+    }
+
+    select {
+      @include input-filter;
+    }
+  }
+
+  .years {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+
+    div {
+      grid-column: span 2 / span 2;
+
+      label {
+        @include label-filter;
+      }
+
+      .start {
+        @include date-input;
+      }
+
+      .end {
+        @include date-input;
+      }
+    }
+
+    .language {
+      grid-column: span 2 / span 2;
+
+      label {
+        @include label-filter;
+      }
+
+      select {
+        @include input-filter;
+      }
+    }
+  }
+
+  .score {
+    label {
+      @include label-filter;
+    }
+  }
+
+  .votes {
+    label {
+      @include label-filter;
+    }
+  }
+
+  .button {
+    @include display-position(flex, items-center, justify-between);
+  }
+}
+
+.form > * + * {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .years {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    div {
+      grid-column: span 1 / span 1;
+    }
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
