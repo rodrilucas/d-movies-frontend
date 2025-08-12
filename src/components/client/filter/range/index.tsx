@@ -25,6 +25,7 @@ export function Range({ label, input }: RangeProps) {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(parseInt(e.target.value));
+    input.onChange(e);
   };
 
   return (
