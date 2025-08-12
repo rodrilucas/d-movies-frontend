@@ -1,0 +1,30 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/variables" as *;
+
+.background {
+  @include display-position(flex, center, center);
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      $black-500 0%,
+
+      #3d3d3d 45%,
+
+      #3d3d3d81 100%
+    );
+    pointer-events: none;
+  }
+}
+
+@include respond(md) {
+  .background {
+    height: 100%;
+  }
+}
