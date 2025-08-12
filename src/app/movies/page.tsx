@@ -5,6 +5,7 @@ import { getByFilter } from "../actions/movies/get-by-filter";
 import { ApiResponse } from "@/types";
 import MoviesListPagination from "@/components/server/movies-list-pagination";
 import Filter from "@/components/client/filter";
+import { dateBR } from "@/utils/date-br";
 
 export type SearchParams = {
   page?: string;
@@ -28,8 +29,8 @@ export default async function MoviesPage({
   const page = Number(params.page ?? "1");
   const sort = params.sort ?? "";
   const query = params.query ?? "";
-  const startYear = params.startYear ?? "";
-  const endYear = params.endYear ?? "";
+  const startYear = params.startYear ? dateBR(params.startYear) : "";
+  const endYear = params.endYear ? dateBR(params.endYear) : "";
   const language = params.language ?? "";
   const rating = params.rating ? Number(params.rating) : 0;
   const avaliation = params.avaliation ? Number(params.avaliation) : 0;
