@@ -1,0 +1,36 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 1rem;
+
+  .filter {
+    width: 100%;
+    height: max-content;
+    flex-shrink: 0;
+    border: 1px solid $black-500;
+    margin-top: 2rem;
+  }
+
+  .movies {
+    flex: 1;
+    min-height: 100vh;
+    color: #fff;
+    padding: 2rem;
+    border: 1px solid $black-500;
+  }
+}
+
+@include respond(lg) {
+  .section {
+    flex-direction: row;
+
+    .filter {
+      max-width: 26rem;
+      margin-top: 0;
+    }
+  }
+}
