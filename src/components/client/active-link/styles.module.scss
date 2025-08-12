@@ -1,0 +1,52 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.link {
+  color: $white-900;
+  cursor: pointer;
+  width: min-content;
+
+  &::before {
+    content: "";
+    transform: scale(0);
+    border-radius: 0.25rem;
+    margin-right: 0.25rem;
+  }
+
+  &.active::before {
+    transform: scale(1);
+    transition: transform 700ms ease;
+    border: 2px solid $blue-700;
+  }
+
+  &.active {
+    font-weight: 600;
+  }
+}
+
+@include respond(md) {
+  .link {
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+      margin-right: 0;
+    }
+
+    &.active::before {
+      border: none;
+    }
+
+    &::after {
+      content: "";
+      transform: scale(0);
+      border-radius: 0.25rem;
+      border: 2px solid $blue-700;
+    }
+
+    &.active::after {
+      transform: scale(1);
+      transition: transform 800ms ease;
+    }
+  }
+}
