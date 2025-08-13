@@ -24,7 +24,7 @@ type GetByFilterParams = {
 export async function getByFilter({
   data,
 }: GetByFilterParams): Promise<GetByFilterResponse> {
-  const response = await fetch(`${env.BASE_URL}`, {
+  const response = await fetch(`${env.BASE_URL}/movies`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
