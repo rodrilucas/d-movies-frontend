@@ -1,5 +1,6 @@
 "use server";
 
+import { env } from "@/env";
 import { ApiResponse } from "@/types";
 
 export type GetByFilterResponse = ApiResponse;
@@ -23,7 +24,7 @@ type GetByFilterParams = {
 export async function getByFilter({
   data,
 }: GetByFilterParams): Promise<GetByFilterResponse> {
-  const response = await fetch("http://localhost:3333/movies", {
+  const response = await fetch(`${env.BASE_URL}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

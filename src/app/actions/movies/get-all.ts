@@ -1,5 +1,6 @@
 "use server";
 
+import { env } from "@/env";
 import { ApiResponse } from "@/types";
 
 export type GetAllResponse = ApiResponse;
@@ -11,7 +12,7 @@ type GetAllParams = {
 
 export async function getAll({ page, limit }: GetAllParams): Promise<GetAllResponse> {
   const response = await fetch(
-    `http://localhost:3333/movies?sort=popularity.desc&page=${page}&limit=${limit}`
+    `${env.BASE_URL}/movies?sort=popularity.desc&page=${page}&limit=${limit}`
   );
   return response.json();
 }

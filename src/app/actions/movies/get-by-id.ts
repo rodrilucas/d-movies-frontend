@@ -1,5 +1,6 @@
 "use server";
 
+import { env } from "@/env";
 import { Movie } from "@/types";
 import { redirect } from "next/navigation";
 
@@ -12,7 +13,7 @@ type GetByIdParams = {
 };
 
 export async function getById({ id }: GetByIdParams): Promise<GetByIdResponse> {
-  const response = await fetch(`http://localhost:3333/movies/${id}`, {
+  const response = await fetch(`${env.BASE_URL}/movies/${id}`, {
     method: "GET",
   });
 

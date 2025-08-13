@@ -1,5 +1,6 @@
 "use server";
 
+import { env } from "@/env";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -11,7 +12,7 @@ export type UserLoginParams = {
 };
 
 export async function login({ data }: UserLoginParams) {
-  const response = await fetch("http://localhost:3333/auth/session", {
+  const response = await fetch(`${env.BASE_URL}/auth/session`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -29,7 +30,7 @@ export async function login({ data }: UserLoginParams) {
     const promisseCookies = await cookies();
 
     promisseCookies.set("token", token, {
-      httpOnly: false,
+      httpOnly: true,
       secure: true,
       sameSite: "lax",
       path: "/",

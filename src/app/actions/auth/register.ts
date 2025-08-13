@@ -1,5 +1,6 @@
 "use server";
 
+import { env } from "@/env";
 import { redirect } from "next/navigation";
 
 export type UserRegisterParams = {
@@ -12,10 +13,10 @@ export type UserRegisterParams = {
 };
 
 export async function register({ data }: UserRegisterParams) {
-  const response = await fetch("http://localhost:3333/auth/register", {
+  const response = await fetch(`${env.BASE_URL}/auth/register`, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json"
     },
     body: JSON.stringify(data),
     cache: "no-store",

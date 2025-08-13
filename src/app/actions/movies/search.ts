@@ -1,5 +1,6 @@
 "use server";
 
+import { env } from "@/env";
 import { ApiResponse } from "@/types";
 
 type SearchResponse = ApiResponse;
@@ -14,7 +15,7 @@ export async function search({
   page,
 }: SearchParam): Promise<SearchResponse> {
   const response = await fetch(
-    `http://localhost:3333/movies/search?query=${query}&page=${page}`
+    `${env.BASE_URL}/movies/search?query=${query}&page=${page}`
   );
   return response.json();
 }
