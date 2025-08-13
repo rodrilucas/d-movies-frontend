@@ -1,5 +1,6 @@
 "use server";
 
+import { env } from "@/env";
 import { getToken } from "../auth/token/get-token";
 
 export type GetProfileResponse = {
@@ -11,7 +12,7 @@ export type GetProfileResponse = {
 
 export async function getProfile(): Promise<GetProfileResponse> {
   const token = await getToken();
-  const response = await fetch("http://localhost:3333/users/profile", {
+  const response = await fetch(`${env.BASE_URL}/users/profile`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
