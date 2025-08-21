@@ -123,17 +123,20 @@
   }
 }
 
-@include respond(lg) {
+@include respond(md) {
   .movie {
     align-items: start;
+    flex-direction: row;
+    top: 0;
 
     img {
-      width: 70%;
-      height: 70%;
+      width: 400px;
+      height: 600px;
     }
 
     .info {
       width: 70%;
+      margin-top: 0;
 
       .title {
         h2 {
@@ -152,22 +155,6 @@
           font-size: 1.5rem;
         }
       }
-    }
-  }
-}
-
-@include respond(lg) {
-  .movie {
-    flex-direction: row;
-    top: 0;
-
-    img {
-      width: 400px;
-      height: 600px;
-    }
-
-    .info {
-      margin-top: 0;
     }
   }
 }
